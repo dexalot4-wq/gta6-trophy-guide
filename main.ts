@@ -5,6 +5,10 @@
 // screenshots, the first load's files and bytes, and your source), with the vendored make.fun library. Leave
 // vendor/makefun-frontend.ts as it is: the scorer requires dossier.json to be byte for byte what its own copy writes.
 //
+// Session build (2026-11-19): the starter checklist was replaced by a full guide — a 4-phase roadmap to the
+// platinum, missable flags, per-trophy guides in our own words with cited sources, kind/grade/search filters,
+// a spoiler-safe mode, and export/import of progress; see app/app.js and README.md for the detail.
+//
 // Only the plumbing, not a winner: a plain checklist of the 55 trophies with a one-line hint each. Write a real guide
 // for every trophy in your own words, a roadmap to the platinum, filters and a spoiler setting in app/, put 3 or 4 PNG
 // or JPEG screenshots of it in screenshots/ (the first by name is the cover; shots.json says which views this

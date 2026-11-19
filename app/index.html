@@ -3,23 +3,76 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Trophy Guide — GTA VI (55 trophies, offline tracker)</title>
+<meta name="description" content="Free offline GTA VI trophy guide and tracker: all 55 official trophies with a roadmap to platinum, missable flags, and a cited guide for each. No account, no network.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="hero-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Official list of 18 Nov 2026</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">All 55 trophies, a roadmap to the platinum, missable flags, and a guide for each — with its sources cited. Works fully offline: your progress lives in this browser only.</p>
+    <p class="counts"><span id="count-platinum"></span> &middot; <span id="count-gold"></span> &middot; <span id="count-silver"></span> &middot; <span id="count-bronze"></span></p>
+  </div>
+  <div class="ring-wrap" aria-label="Overall progress">
+    <svg class="ring" viewBox="0 0 120 120" width="120" height="120">
+      <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+      <circle class="ring-fg" id="ring-fg" cx="60" cy="60" r="52"></circle>
+    </svg>
+    <div class="ring-label"><strong id="progress-num">0 / 55</strong><span id="progress-pct">0% to platinum</span></div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmap-note">Built from the official trophy descriptions. Play in this order and almost nothing needs a second run. The two partner trophies are the only ones tied to a story window — grab them while your partner is with you.</p>
+  <div class="phases" id="phases"></div>
+</section>
+
+<section class="tracker" aria-label="Trophy tracker">
+  <div class="toolbar">
+    <label class="search">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+    <label>Grade
+      <select id="grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Kind
+      <select id="kind">
+        <option value="all">All kinds</option>
+        <option value="story">Story</option>
+        <option value="side">Side missions</option>
+        <option value="activity">Activities</option>
+        <option value="collectible">Collectibles</option>
+        <option value="combat">Combat &amp; crime</option>
+        <option value="exploration">Exploration</option>
+        <option value="economy">Money &amp; property</option>
+        <option value="misc">Everything else</option>
+        <option value="missable">Missable / watch out</option>
+      </select>
+    </label>
+    <label class="check"><input id="hide-earned" type="checkbox"> Hide earned</label>
+    <label class="check spoiler"><input id="spoiler" type="checkbox"> Spoiler-safe <span class="hint">hides story trophies until earned</span></label>
+    <span class="spacer"></span>
+    <button id="export" type="button">Export progress</button>
+    <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+    <button id="reset" type="button" class="danger">Reset</button>
+  </div>
+  <p class="list-meta"><span id="showing"></span> <span id="missable-count"></span></p>
+  <div class="list" id="list"></div>
+</section>
+
+<footer>
+  <h2>Sources &amp; honesty note</h2>
+  <p>Names, descriptions and grades: the official 55-trophy list on <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a>, cross-checked against <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a> (which also supplies the PSN progress targets quoted in the guides). Every guide above is written in our own words from those descriptions — no text copied from any other guide.</p>
+  <p>The game released 19 Nov 2026 and no community walkthrough existed when this guide was written. Where the official description names no place or step, the guide says so instead of inventing one; those trophies are flagged “watch out” and will be updated as the community confirms the triggers. Progress is stored in your browser (localStorage) and never leaves it. No Rockstar logo, artwork or game screenshots are used. Not affiliated with Rockstar Games.</p>
+  <p class="fine">Leonida Trophy Guide · MIT licensed · <a href="https://make.fun/bounty/gta6-trophy-guide-01">make.fun bounty gta6-trophy-guide-01</a></p>
+</footer>
 <script type="module" src="app.js"></script>
 </body>
 </html>
